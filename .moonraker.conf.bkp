@@ -31,37 +31,25 @@ trusted_clients =
 
 [announcements]
 subscriptions = 
-	mainsail
+	fluidd
 
 [timelapse]
-enabled = True
-mode = layermacro
-parkhead = True
-parkpos = back_left
-park_travel_speed = 300
-park_retract_speed = 50
-park_extrude_speed = 30
-park_retract_distance = 0.5
-park_extrude_distance = 0.5
-autorender = True
-time_format_code = %Y%m%d_%H%M
-previewimage = True
 
 [update_manager]
 refresh_interval = 168
 enable_auto_refresh = True
 
-[update_manager mainsail]
+[update_manager fluidd]
 type = web
 channel = stable
-repo = mainsail-crew/mainsail
-path = ~/mainsail
+repo = fluidd-core/fluidd
+path = ~/fluidd
 
-[update_manager mainsail-config]
+[update_manager fluidd-config]
 type = git_repo
 primary_branch = master
-path = ~/mainsail-config
-origin = https://github.com/mainsail-crew/mainsail-config.git
+path = ~/fluidd-config
+origin = https://github.com/fluidd-core/fluidd-config.git
 managed_services = klipper
 
 [update_manager crowsnest]
@@ -76,14 +64,6 @@ type = git_repo
 path = ~/klipper-led_effect
 origin = https://github.com/julianschill/klipper-led_effect.git
 is_system_service = False
-
-[update_manager sonar]
-type = git_repo
-path = ~/sonar
-origin = https://github.com/mainsail-crew/sonar.git
-primary_branch = main
-managed_services = sonar
-install_script = tools/install.sh
 
 [update_manager voron-klipper-extensions]
 type = git_repo
@@ -107,10 +87,4 @@ primary_branch = main
 path = ~/moonraker-timelapse
 origin = https://github.com/mainsail-crew/moonraker-timelapse.git
 managed_services = klipper moonraker
-
-[update_manager fluidd]
-type = web
-channel = stable
-repo = fluidd-core/fluidd
-path = ~/fluidd
 
