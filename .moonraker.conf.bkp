@@ -88,9 +88,3 @@ path = ~/fluidd-config
 origin = https://github.com/fluidd-core/fluidd-config.git
 managed_services = klipper
 
-[update_manager mainsail]
-type = web
-channel = stable
-repo = mainsail-crew/mainsail
-path = ~/mainsail
-
