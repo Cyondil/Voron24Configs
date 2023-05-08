@@ -99,3 +99,9 @@ install_script = install.sh
 managed_services = 
 	octoeverywhere
 
+[update_manager mainsail]
+type = web
+channel = stable
+repo = mainsail-crew/mainsail
+path = ~/mainsail
+
