@@ -31,7 +31,7 @@ trusted_clients =
 
 [announcements]
 subscriptions = 
-	octoeverywhere
+	fluidd
 
 [timelapse]
 
@@ -87,21 +87,4 @@ primary_branch = master
 path = ~/fluidd-config
 origin = https://github.com/fluidd-core/fluidd-config.git
 managed_services = klipper
-
-[update_manager octoeverywhere]
-type = git_repo
-channel = beta
-path = /home/pi/octoeverywhere
-origin = https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere.git
-env = /home/pi/octoeverywhere-env/bin/python
-requirements = requirements.txt
-install_script = install.sh
-managed_services = 
-	octoeverywhere
-
-[update_manager mainsail]
-type = web
-channel = stable
-repo = mainsail-crew/mainsail
-path = ~/mainsail
 
