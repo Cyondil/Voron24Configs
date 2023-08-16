@@ -31,7 +31,7 @@ trusted_clients =
 
 [announcements]
 subscriptions = 
-	fluidd
+	octoeverywhere
 
 [timelapse]
 
@@ -93,4 +93,15 @@ type = web
 channel = stable
 repo = mainsail-crew/mainsail
 path = ~/mainsail
+
+[update_manager octoeverywhere]
+type = git_repo
+channel = beta
+path = /home/pi/octoeverywhere
+origin = https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere.git
+env = /home/pi/octoeverywhere-env/bin/python
+requirements = requirements.txt
+install_script = install.sh
+managed_services = 
+	octoeverywhere
 
