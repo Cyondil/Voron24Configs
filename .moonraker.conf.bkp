@@ -29,11 +29,17 @@ trusted_clients =
 
 [history]
 
+[timelapse]
+output_path = ~/printer_data/timelapse/
+frame_path = /tmp/timelapse/printer
+
+[spoolman]
+server = http://192.168.1.81:7912
+sync_rate = 5
+
 [announcements]
 subscriptions = 
 	octoeverywhere
-
-[timelapse]
 
 [update_manager]
 refresh_interval = 168
@@ -46,19 +52,6 @@ origin = https://github.com/mainsail-crew/crowsnest.git
 managed_services = crowsnest
 install_script = tools/install.sh
 
-[update_manager led_effect]
-type = git_repo
-path = ~/klipper-led_effect
-origin = https://github.com/julianschill/klipper-led_effect.git
-is_system_service = False
-
-[update_manager voron-klipper-extensions]
-type = git_repo
-path = ~/voron-klipper-extensions
-origin = https://github.com/voidtrance/voron-klipper-extensions.git
-install_script = install-extensions.sh
-managed_services = klipper
-
 [update_manager KlipperScreen]
 type = git_repo
 path = ~/KlipperScreen
@@ -67,13 +60,6 @@ env = ~/.KlipperScreen-env/bin/python
 requirements = scripts/KlipperScreen-requirements.txt
 install_script = scripts/KlipperScreen-install.sh
 managed_services = KlipperScreen
-
-[update_manager timelapse]
-type = git_repo
-primary_branch = main
-path = ~/moonraker-timelapse
-origin = https://github.com/mainsail-crew/moonraker-timelapse.git
-managed_services = klipper moonraker
 
 [update_manager fluidd]
 type = web
@@ -87,12 +73,6 @@ primary_branch = master
 path = ~/fluidd-config
 origin = https://github.com/fluidd-core/fluidd-config.git
 managed_services = klipper
-
-[update_manager mainsail]
-type = web
-channel = stable
-repo = mainsail-crew/mainsail
-path = ~/mainsail
 
 [update_manager octoeverywhere]
 type = git_repo
@@ -122,4 +102,18 @@ managed_services = mobileraker
 env = /home/pi/mobileraker-env/bin/python
 requirements = scripts/mobileraker-requirements.txt
 install_script = scripts/install-mobileraker-companion.sh
+
+[update_manager timelapse]
+type = git_repo
+primary_branch = main
+path = ~/moonraker-timelapse
+origin = https://github.com/mainsail-crew/moonraker-timelapse.git
+managed_services = klipper moonraker
+
+[update_manager voron-klipper-extensions]
+type = git_repo
+path = ~/voron-klipper-extensions
+origin = https://github.com/voidtrance/voron-klipper-extensions.git
+install_script = install-extensions.sh
+managed_services = klipper
 
